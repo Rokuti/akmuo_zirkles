@@ -6,6 +6,16 @@ from stats import get_statistics
 class RPSApp:
     def __init__(self, root):
         self.root = root
+
+        window_width = 500
+        window_height = 200
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        root.geometry(f"{window_width}x{window_height}+{x}+{y}")
+        self.root.geometry(f"{window_width}x{window_height}")
+
         self.root.title("Akmuo, popierius, žirklės")
 
         self.username = None
